@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function validate() {
+            var exp = /^[A-Za-z0-9\s]+$/;
+            var address = document.myform.address.value;
+            var result = exp.test(address);
+
+            if(result){
+                alert('Validation Successful');
+            }else{
+                document.getElementById('err').innerHTML = 'Please enter alpha numeric values only'
+                document.myform.address.focus();
+                return false;
+            }
+        }
+    </script>
+</html>
+<body>
+    <form name="myform"  action="#" onsubmit="return validate()">
+        <h1>Registration form</h1>
+        Address:<input type="text" name="address">
+        <b id="err"></b><br/>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
